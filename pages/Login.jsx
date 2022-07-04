@@ -43,7 +43,7 @@ const Login = () => {
 				onSubmit={handleLogin}
 				className="flex flex-col max-w-[600px] w-full"
 			>
-				<div className="pb-8 pt-32 sm:pt-10">
+				<div className="pb-8 sm:pt-10">
 					<p className="text-4xl font-bold inline border-b-4 border-[#6133f5] text-gray-300">
 						Login
 					</p>
