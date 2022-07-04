@@ -91,10 +91,18 @@ const Login = () => {
 
 				<button
 					type="submit"
-					className="text-white border-2 btn btn-outline px-4 py-3 my-8 mx-auto flex items-center hover:bg-slate-50 hover:text-black duration-500 ease-in-out transition-all"
+					className="text-white rounded-lg border-2 btn btn-outline px-4 py-3 my-8 mx-auto flex items-center hover:px-6 hover:bg-slate-50 hover:text-black duration-200 ease-in-out transition-all"
 				>
 					Submit
 				</button>
+				<div className="text-white font-bold text-xl text-center">
+					New user ?
+				</div>
+				<Link href="/Signup">
+					<div className="text-white cursor-pointer rounded-lg border-2 btn btn-outline px-4 py-3 my-8 mx-auto flex items-center hover:px-6 hover:bg-slate-50 hover:text-black duration-200 ease-in-out transition-all">
+						Create Account
+					</div>
+				</Link>
 			</form>
 		</div>
 	);
