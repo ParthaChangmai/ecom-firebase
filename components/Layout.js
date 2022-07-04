@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
 			<div className="top-0 left-0 sticky">
 				<Navbar />
 			</div>
-			<div className="flex-grow flex">{children}</div>
+			<div className="flex-grow flex container mx-auto">{children}</div>
 		</div>
 	);
 };
