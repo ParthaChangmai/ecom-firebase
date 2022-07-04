@@ -20,9 +20,12 @@ const cartSlice = createSlice({
 				state.cartItems.push(tempProduct);
 			}
 		},
+		changeCartStatus(state, action) {
+			state.status = action.payload;
+		},
 	},
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, changeCartStatus } = cartSlice.actions;
 
 export default cartSlice.reducer;
