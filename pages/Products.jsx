@@ -15,8 +15,8 @@ const Products = () => {
 			<div
 				className={
 					cart?.status
-						? 'right-0 p-2 px-3 rounded-l-lg fixed ease-in-out duration-500 transition-all top-0 min-h-screen bg-gray-900 shadow-cart w-2/5'
-						: 'right-[-100%] p-2 px-3 rounded-l-lg fixed ease-in-out duration-1000 transition-all top-0 min-h-screen bg-gray-900 shadow-cart w-2/5'
+						? 'right-0 p-2 px-3 rounded-l-lg fixed ease-in-out duration-500 transition-all top-0 min-h-screen bg-gray-900 shadow-cart w-5/6 lg:w-2/5'
+						: 'right-[-100%] p-2 px-3 rounded-l-lg fixed ease-in-out duration-1000 transition-all top-0 min-h-screen bg-gray-900 shadow-cart w-5/6 lg:w-2/5'
 				}
 			>
 				<Cart />
