@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../features/cartSlice';
 
@@ -10,11 +11,18 @@ const ItemCard = ({ product }) => {
 	const handleAddToCart = () => {
 		dispatch(addToCart(product));
 	};
+	console.log(url);
 
 	return (
 		<div className="bg-[#F5F5F5] cursor-default mt-5 ml-4 px-2 pt-4 rounded-xl flex w-80 flex-col ">
 			<div>
-				<img src={url} className="rounded-xl" alt="" />
+				<Image
+					width={300}
+					height={300}
+					src={url}
+					className="rounded-xl"
+					alt="samsung"
+				/>
 			</div>
 			<div className="font-extrabold pt-2 text-3xl">{name}</div>
 			<div className=" pt-2 font-thin text-gray-700 text-md">{discription}</div>

@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import {
@@ -31,7 +32,13 @@ const CartItemCard = ({ cartItems }) => {
 		<div className="flex flex-col gap-2">
 			<div className="flex flex-col md:flex-row mt-5 pt-2  border-2 border-[#6133f5] rounded-3xl">
 				<div className="md:w-[50%]">
-					<img className="rounded-lg opacity-95" src={url} alt="" />
+					<Image
+						width={350}
+						height={400}
+						className="rounded-lg opacity-95"
+						src={url}
+						alt="samsung"
+					/>
 					<div className="w-full flex justify-center gap-7 py-1">
 						<button
 							onClick={decreaseCartQuantity}
