@@ -11,7 +11,6 @@ const ItemCard = ({ product }) => {
 	const handleAddToCart = () => {
 		dispatch(addToCart(product));
 	};
-	console.log(url);
 
 	return (
 		<div className="bg-[#F5F5F5] cursor-default mt-5 ml-4 px-2 pt-4 rounded-xl flex w-80 flex-col ">
