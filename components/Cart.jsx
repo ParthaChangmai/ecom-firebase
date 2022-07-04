@@ -12,8 +12,6 @@ const Cart = () => {
 		dispatch(changeCartStatus(!status));
 	};
 
-	console.log(status);
-
 	return (
 		<div className="text-white pt-2 cursor-default">
 			<div className="flex justify-between border-b-2 border-[#6133f5] pb-2">

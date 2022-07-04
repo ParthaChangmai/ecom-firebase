@@ -18,7 +18,6 @@ const Login = () => {
 			await signIn(data.email, data.password);
 			router.push('/Products');
 		} catch (err) {
-			console.log(err);
 			setError(true);
 			setTimeout(() => {
 				setError(false);

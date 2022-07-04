@@ -6,7 +6,6 @@ import { useAuth } from '../context/AuthContext';
 const Signup = () => {
 	const router = useRouter();
 	const { user, signUp } = useAuth();
-	console.log(user);
 
 	const [error, setError] = useState(false);
 	const [data, setData] = useState({
@@ -22,14 +21,11 @@ const Signup = () => {
 			await signUp(data.email, data.password);
 			router.push('/Login');
 		} catch (err) {
-			console.log(err);
 			setError(true);
 			setTimeout(() => {
 				setError(false);
 			}, 1500);
 		}
-
-		console.log(data);
 	};
 
 	return (
