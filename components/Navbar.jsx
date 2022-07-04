@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { BsFillCartFill, BsFillCartCheckFill } from 'react-icons/Bs';
 
 import { useAuth } from '../context/AuthContext';
+import { changeCartStatus } from '../features/cartSlice';
 
 const Navbar = () => {
 	const { user, logOut } = useAuth();
 	const router = useRouter();
+	const dispatch = useDispatch();
 	const cart = useSelector((state) => state.cart);
-
+	console.log(cart);
+	const handleCartStatus = () => {
+		dispatch(changeCartStatus(!cart.status));
+	};
 	const handleLogout = () => {
 		logOut();
 		router.push('/Login');
@@ -31,10 +36,23 @@ const Navbar = () => {
 							)}
 
 							<li className={user ? 'flex' : 'hidden'}>
-								<BsFillCartFill className="mt-1  cursor-pointer" />
-								<span className="text-xs px-1 mb-2 bg-blue-400 rounded-3xl">
-									2
-								</span>
+								{cart.cartItems?.length > 0 ? (
+									<BsFillCartCheckFill
+										onClick={handleCartStatus}
+										className="mt-1  cursor-pointer"
+									/>
+								) : (
+									<BsFillCartFill
+										onClick={handleCartStatus}
+										className="mt-1  cursor-pointer"
+									/>
+								)}
+
+								{cart?.cartItems[0]?.quantity > 0 && (
+									<span className="text-xs px-1 mb-2 bg-blue-400 rounded-3xl">
+										{cart.cartItems[0].quantity}
+									</span>
+								)}
 							</li>
 						</ul>
 					</div>
