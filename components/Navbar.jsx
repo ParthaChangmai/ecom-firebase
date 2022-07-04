@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
-import { BsFillCartFill, BsFillCartCheckFill } from 'react-icons/Bs';
+import { BsFillCartFill, BsFillCartCheckFill } from 'react-icons/bs';
 
 import { useAuth } from '../context/AuthContext';
 import { changeCartStatus } from '../features/cartSlice';
