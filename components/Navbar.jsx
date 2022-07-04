@@ -5,6 +5,7 @@ import { BsFillCartFill, BsFillCartCheckFill } from 'react-icons/Bs';
 
 import { useAuth } from '../context/AuthContext';
 import { changeCartStatus } from '../features/cartSlice';
+import Link from 'next/link';
 
 const Navbar = () => {
 	const { user, logOut } = useAuth();
@@ -22,10 +23,12 @@ const Navbar = () => {
 
 	return (
 		<>
-			<div className=" min-w-screen flex justify-between text-white bg-[#182647]/10 h-16 items-center font-bold  shadow-md shadow-slate-300">
+			<div className="text-lg min-w-screen flex justify-between text-white bg-[#182647]/10 h-16 items-center font-bold  shadow-md shadow-slate-300">
 				<div className="flex container mx-auto justify-between">
 					<div>
-						<h1 className="pl-5">ShopCart</h1>
+						<Link href="Products">
+							<h1 className="pl-5 cursor-pointer">ShopCart</h1>
+						</Link>
 					</div>
 					<div>
 						<ul className="flex gap-3 pr-4 ">
@@ -49,7 +52,7 @@ const Navbar = () => {
 								)}
 
 								{cart?.cartItems[0]?.quantity > 0 && (
-									<span className="text-xs px-1 mb-2 bg-blue-400 rounded-3xl">
+									<span className="text-xs px-1 mb-2 bg-blue-400 rounded-full">
 										{cart.cartItems[0].quantity}
 									</span>
 								)}
