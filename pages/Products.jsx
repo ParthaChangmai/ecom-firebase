@@ -1,20 +1,26 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import Cart from '../components/Cart';
 import ItemCard from '../components/ItemCard';
 import product from '../data/product.json';
-import { addToCart } from '../features/cartSlice';
-
-const { name, url, price } = product[0];
 
 const Products = () => {
-	const dispatch = useDispatch();
+	const cart = useSelector((state) => state.cart);
 
-	const handleAddToCart = () => {
-		dispatch(addToCart(product[0]));
-	};
 	return (
 		<div>
-			<ItemCard product={product[0]} />
+			<div>
+				<ItemCard product={product[0]} />
+			</div>
+			<div
+				className={
+					cart?.status
+						? 'right-0 p-2 px-3 rounded-l-lg fixed ease-in-out duration-500 transition-all top-0 min-h-screen bg-gray-900 shadow-cart w-2/5'
+						: 'right-[-100%] p-2 px-3 rounded-l-lg fixed ease-in-out duration-1000 transition-all top-0 min-h-screen bg-gray-900 shadow-cart w-2/5'
+				}
+			>
+				<Cart />
+			</div>
 		</div>
 	);
 };
